@@ -161,56 +161,56 @@
   </section>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Car data from Autodata mirror database - using createElement approach to avoid template literal escaping issues
-      const makesData = {
-        "Audi": [
-          {"model": "A3", "years": "2005-2013", "engine": "2.0 TFSI", "modules": 4087, "images": 50657, "image_bytes": 450518, "vid": "vid_1"},
-          {"model": "A4", "years": "2008-2016", "engine": "2.0 TFSI", "modules": 3210, "images": 41234, "image_bytes": 389124, "vid": "vid_2"}
-        ],
-        "BMW": [
-          {"model": "3 Series", "years": "2006-2013", "engine": "3.0 L", "modules": 2129, "images": 27129, "image_bytes": 191550, "vid": "vid_3"},
-          {"model": "X3", "years": "2004-2010", "engine": "2.0 L", "modules": 1500, "images": 18000, "image_bytes": 120000, "vid": "vid_4"}
-        ],
-        "Holden": [
-          {"model": "Commodore", "years": "2001-2006", "engine": "5.7 V8", "modules": 4675, "images": 60232, "image_bytes": 378628, "vid": "vid_5"},
-          {"model": "Cruze", "years": "2008-2012", "engine": "1.8 L", "modules": 1200, "images": 15000, "image_bytes": 85000, "vid": "vid_6"}
-        ],
-        "Honda": [
-          {"model": "Civic", "years": "2005-2012", "engine": "2.0 L", "modules": 1163, "images": 13745, "image_bytes": 57442, "vid": "vid_7"},
-          {"model": "Accord", "years": "2003-2008", "engine": "3.0 L", "modules": 800, "images": 9500, "image_bytes": 42000, "vid": "vid_8"}
-        ],
-        "Hyundai": [
-          {"model": "i30", "years": "2007-2012", "engine": "1.6 L", "modules": 1320, "images": 15972, "image_bytes": 110088, "vid": "vid_9"},
-          {"model": "Sonata", "years": "2006-2011", "engine": "2.4 L", "modules": 900, "images": 10500, "image_bytes": 65000, "vid": "vid_10"}
-        ],
-        "Kia": [
-          {"model": "Cerato", "years": "2004-2010", "engine": "1.8 L", "modules": 1130, "images": 14387, "image_bytes": 82899, "vid": "vid_11"},
-          {"model": "Sportage", "years": "2005-2011", "engine": "2.0 L", "modules": 800, "images": 9500, "image_bytes": 55000, "vid": "vid_12"}
-        ],
-        "Mercedes-Benz": [
-          {"model": "C-Class", "years": "2005-2014", "engine": "3.5 L", "modules": 2294, "images": 28274, "image_bytes": 213316, "vid": "vid_13"},
-          {"model": "E-Class", "years": "2003-2009", "engine": "5.0 L", "modules": 1800, "images": 22000, "image_bytes": 165000, "vid": "vid_14"}
-        ],
-        "Mitsubishi": [
-          {"model": "Lancer", "years": "2003-2010", "engine": "2.0 L", "modules": 1656, "images": 22880, "image_bytes": 98220, "vid": "vid_15"},
-          {"model": "Outlander", "years": "2007-2013", "engine": "3.0 L", "modules": 1200, "images": 15000, "image_bytes": 75000, "vid": "vid_16"}
-        ],
-        "Nissan": [
-          {"model": "Altima", "years": "2007-2013", "engine": "2.5 L", "modules": 1561, "images": 19331, "image_bytes": 93398, "vid": "vid_17"},
-          {"model": "Qashqai", "years": "2007-2013", "engine": "2.0 L", "modules": 1000, "images": 12000, "image_bytes": 58000, "vid": "vid_18"}
-        ],
-        "Subaru": [
-          {"model": "Impreza", "years": "2005-2011", "engine": "2.5 L", "modules": 737, "images": 9463, "image_bytes": 42310, "vid": "vid_19"},
-          {"model": "Forester", "years": "2003-2008", "engine": "3.0 L", "modules": 500, "images": 6000, "image_bytes": 28000, "vid": "vid_20"}
-        ],
-        "Volkswagen": [
-          {"model": "Golf V", "years": "2004-2009", "engine": "2.0 FSI", "modules": 1945, "images": 23216, "image_bytes": 266835, "vid": "vid_21"},
-          {"model": "Golf VI", "years": "2009-2013", "engine": "1.4 TSI", "modules": 1500, "images": 18000, "image_bytes": 200000, "vid": "vid_22"}
-        ]
-      };
+    // Car data from Autodata mirror database
+    const makesData = {
+      "Audi": [
+        {"model": "A3", "years": "2005-2013", "engine": "2.0 TFSI", "modules": 4087, "images": 50657, "image_bytes": 450518, "vid": "vid_1"},
+        {"model": "A4", "years": "2008-2016", "engine": "2.0 TFSI", "modules": 3210, "images": 41234, "image_bytes": 389124, "vid": "vid_2"}
+      ],
+      "BMW": [
+        {"model": "3 Series", "years": "2006-2013", "engine": "3.0 L", "modules": 2129, "images": 27129, "image_bytes": 191550, "vid": "vid_3"},
+        {"model": "X3", "years": "2004-2010", "engine": "2.0 L", "modules": 1500, "images": 18000, "image_bytes": 120000, "vid": "vid_4"}
+      ],
+      "Holden": [
+        {"model": "Commodore", "years": "2001-2006", "engine": "5.7 V8", "modules": 4675, "images": 60232, "image_bytes": 378628, "vid": "vid_5"},
+        {"model": "Cruze", "years": "2008-2012", "engine": "1.8 L", "modules": 1200, "images": 15000, "image_bytes": 85000, "vid": "vid_6"}
+      ],
+      "Honda": [
+        {"model": "Civic", "years": "2005-2012", "engine": "2.0 L", "modules": 1163, "images": 13745, "image_bytes": 57442, "vid": "vid_7"},
+        {"model": "Accord", "years": "2003-2008", "engine": "3.0 L", "modules": 800, "images": 9500, "image_bytes": 42000, "vid": "vid_8"}
+      ],
+      "Hyundai": [
+        {"model": "i30", "years": "2007-2012", "engine": "1.6 L", "modules": 1320, "images": 15972, "image_bytes": 110088, "vid": "vid_9"},
+        {"model": "Sonata", "years": "2006-2011", "engine": "2.4 L", "modules": 900, "images": 10500, "image_bytes": 65000, "vid": "vid_10"}
+      ],
+      "Kia": [
+        {"model": "Cerato", "years": "2004-2010", "engine": "1.8 L", "modules": 1130, "images": 14387, "image_bytes": 82899, "vid": "vid_11"},
+        {"model": "Sportage", "years": "2005-2011", "engine": "2.0 L", "modules": 800, "images": 9500, "image_bytes": 55000, "vid": "vid_12"}
+      ],
+      "Mercedes-Benz": [
+        {"model": "C-Class", "years": "2005-2014", "engine": "3.5 L", "modules": 2294, "images": 28274, "image_bytes": 213316, "vid": "vid_13"},
+        {"model": "E-Class", "years": "2003-2009", "engine": "5.0 L", "modules": 1800, "images": 22000, "image_bytes": 165000, "vid": "vid_14"}
+      ],
+      "Mitsubishi": [
+        {"model": "Lancer", "years": "2003-2010", "engine": "2.0 L", "modules": 1656, "images": 22880, "image_bytes": 98220, "vid": "vid_15"},
+        {"model": "Outlander", "years": "2007-2013", "engine": "3.0 L", "modules": 1200, "images": 15000, "image_bytes": 75000, "vid": "vid_16"}
+      ],
+      "Nissan": [
+        {"model": "Altima", "years": "2007-2013", "engine": "2.5 L", "modules": 1561, "images": 19331, "image_bytes": 93398, "vid": "vid_17"},
+        {"model": "Qashqai", "years": "2007-2013", "engine": "2.0 L", "modules": 1000, "images": 12000, "image_bytes": 58000, "vid": "vid_18"}
+      ],
+      "Subaru": [
+        {"model": "Impreza", "years": "2005-2011", "engine": "2.5 L", "modules": 737, "images": 9463, "image_bytes": 42310, "vid": "vid_19"},
+        {"model": "Forester", "years": "2003-2008", "engine": "3.0 L", "modules": 500, "images": 6000, "image_bytes": 28000, "vid": "vid_20"}
+      ],
+      "Volkswagen": [
+        {"model": "Golf V", "years": "2004-2009", "engine": "2.0 FSI", "modules": 1945, "images": 23216, "image_bytes": 266835, "vid": "vid_21"},
+        {"model": "Golf VI", "years": "2009-2013", "engine": "1.4 TSI", "modules": 1500, "images": 18000, "image_bytes": 200000, "vid": "vid_22"}
+      ]
+    };
 
-      // Build car cards using DOM createElement to avoid template literal escaping issues
+    // Generate car cards and populate the grid
+    document.addEventListener('DOMContentLoaded', function() {
       const grid = document.getElementById('car-cards');
       if (!grid) return;
 
